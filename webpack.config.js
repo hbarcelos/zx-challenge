@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const DotenvPlugin = require('dotenv-webpack');
 
 module.exports = {
   entry: './src/index.js',
@@ -40,6 +41,7 @@ module.exports = {
     filename: 'bundle.js',
   },
   plugins: [
+    new DotenvPlugin({ path: './.env' }),
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebPackPlugin({
       template: 'src/static/index.html',

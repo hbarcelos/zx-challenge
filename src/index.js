@@ -1,45 +1,26 @@
 import React from 'react';
 import { render } from 'react-dom';
-import ApolloClient from 'apollo-boost';
-import gql from 'graphql-tag';
+import { search, getProductList } from './services/poc';
+import { find as findLocation } from './services/maps';
 import './index.css';
 
-const client = new ApolloClient({
-  uri:
-    'https://803votn6w7.execute-api.us-west-2.amazonaws.com/dev/public/graphql',
-});
-
-client
-  .query({
-    query: gql`
-      {
-        pocSearch(
-          algorithm: "NEAREST"
-          lat: "-23.6289956"
-          long: "-46.6452681"
-          now: "2018-12-12T21:25:00.000Z"
-        ) {
-          id
-          tradingName
-          officialName
-          products {
-            id
-            images {
-              url
-            }
-            imageUrl
-            title
-          }
-          address {
-            address1
-            address2
-          }
-        }
-      }
-    `,
-  })
-  .then(result => console.log(result));
 const title = 'My minimal React Webpack Babel Setup';
+
+(async () => {
+  // const pocs = await search({
+  //   lat: '-23.632919',
+  //   long: '-46.699453',
+  // });
+
+  // const products = await getProductList({ pocId: pocs[0].id });
+  console.log(process.env.GOOGLE_GEOCODING_API_KEY);
+
+  const data = await findLocation({
+    address: 'Avenida presidente vargas, Dourados',
+  });
+  console.log(data);
+  // console.log('Products:', products);
+})();
 
 render(<div>{title}</div>, document.querySelector('#app'));
 

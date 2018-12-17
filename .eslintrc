@@ -32,7 +32,9 @@
         "trailingComma": "es5"
       }
     ],
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/jsx-filename-extension": [1, {
+      "extensions": [".js", ".jsx"]
+    }],
     "react/prefer-stateless-function": 1,
     "react/destructuring-assignment": 0,
     "react/forbid-prop-types": 1,
@@ -40,16 +42,30 @@
     "import/no-dynamic-require": 0,
     "import/prefer-default-export": 0,
     "import/no-unresolved": "off",
-    "jsx-a11y/label-has-for": "off",
+    "jsx-a11y/label-has-associated-control": [2, {
+      "labelComponents": ["label", "Label"]
+    }],
+    "jsx-a11y/label-has-for": [ 2, {
+      "components": [ "label", "Label" ],
+      "required": {
+        "some": [ "nesting", "id" ]
+      },
+      "allowChildren": true
+    }],
     "global-require": 0,
     "no-restricted-syntax": 0,
     "no-underscore-dangle": 0,
-    "max-len": [1, 120, 2, { "ignoreComments": true }],
+    "max-len": [1, 120, 2, {
+      "ignoreComments": true
+    }],
     "quote-props": [1, "consistent-as-needed"],
     "no-cond-assign": [2, "except-parens"],
     "radix": 0,
     "space-infix-ops": 0,
-    "no-unused-vars": [1, { "vars": "local", "args": "none" }],
+    "no-unused-vars": [1, {
+      "vars": "local",
+      "args": "none"
+    }],
     "default-case": 0,
     "no-else-return": 0,
     "no-param-reassign": 0,

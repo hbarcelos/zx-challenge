@@ -1,0 +1,7 @@
+.product__list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  width: calc(100%);
+  margin: 0 auto;
+}

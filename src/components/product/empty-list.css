@@ -1,0 +1,6 @@
+.product__list.product__list--empty {
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  color: hsl(200, 0%, 20%);
+}

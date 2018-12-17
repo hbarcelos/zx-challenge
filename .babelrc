@@ -17,5 +17,11 @@
       }
     ],
     "@babel/preset-react"
+  ],
+  "plugins": [
+    ["ramda", {
+      "useES": true
+    }],
+    "@babel/proposal-class-properties"
   ]
 }

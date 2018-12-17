@@ -1,0 +1,64 @@
+.address-search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: calc(100% - 4rem);
+  margin: 2rem auto;
+}
+
+.address-search__label--sr-only {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+
+.address-search__field {
+  flex: 10 10 20rem;
+  padding: 1rem;
+}
+
+.address-search__btn {
+  flex: 1 1 5rem;
+  padding: 1rem;
+  background: hsl(200, 43%, 96%);
+  cursor: pointer;
+  border: 1px solid hsl(200, 6%, 20%);
+  color: hsl(200, 6%, 20%);
+  border-top-right-radius: .275rem;
+  border-bottom-right-radius: .275rem;
+}
+
+.address-search__btn--primary {
+  background: hsl(214, 49%, 35%);
+  border: 1px solid hsl(214, 82%, 22%);
+  color: hsl(200, 43%, 96%);
+}
+
+.address-search__btn--primary:hover,
+.address-search__btn--primary:focus {
+  background: hsl(214, 36%, 42%);
+  border: 1px solid hsl(214, 74%, 27%);
+  color: hsl(200, 43%, 98%);
+}
+
+.address-search__btn[disabled] {
+  background: hsl(200, 12%, 79%);
+  border: 1px solid hsl(200, 10%, 42%);
+  color: hsl(200, 10%, 42%);
+  cursor: not-allowed;
+}
+
+.address-search__field {
+  border: 1px solid hsl(214, 82%, 22%);
+  border-right: none;
+  background: hsl(200, 43%, 99%);
+  color: hsl(214, 4%, 43%);
+  border-top-left-radius: .275rem;
+  border-bottom-left-radius: .275rem;
+}
+
+.address-search__field:hover,
+.address-search__field:focus {
+  border: 1px solid hsl(214, 74%, 27%);
+  border-right: none;
+}

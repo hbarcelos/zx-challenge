@@ -1,11 +1,11 @@
 import ApolloClient from 'apollo-boost';
 import gql from 'graphql-tag';
+import fixtures from './poc.fixtures';
 
-const createClient = () =>
-  new ApolloClient({
-    uri:
-      'https://803votn6w7.execute-api.us-west-2.amazonaws.com/dev/public/graphql',
-  });
+const client = new ApolloClient({
+  uri:
+    'https://803votn6w7.execute-api.us-west-2.amazonaws.com/dev/public/graphql',
+});
 
 export async function search({
   lat,
@@ -13,7 +13,6 @@ export async function search({
   algorithm = 'NEAREST',
   now = new Date(),
 }) {
-  const client = createClient();
   const result = await client.query({
     query: gql`
       {
@@ -47,14 +46,20 @@ export async function search({
   return result.data.pocSearch;
 }
 
+export function transformProductList(result) {
+  return result.data.poc.products
+    .map(({ productVariants }) => productVariants)
+    .flat()
+    .filter(({ price }) => !!price);
+}
+
 export async function getProductList({ pocId, filter = '', categoryId = 0 }) {
-  const client = createClient();
   const result = await client.query({
     query: gql`
       {
         poc(id: "${pocId}") {
           products(categoryId: ${categoryId}, search: "${filter}") {
-            productVariants{
+            productVariants {
               title
               description
               imageUrl
@@ -66,7 +71,6 @@ export async function getProductList({ pocId, filter = '', categoryId = 0 }) {
     `,
   });
 
-  return result.data.poc.products
-    .map(({ productVariants }) => productVariants)
-    .flat();
+  // const result = fixtures;
+  return transformProductList(result);
 }

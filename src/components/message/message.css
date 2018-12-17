@@ -1,0 +1,8 @@
+.message {
+  text-align: center;
+  max-width: 80%;
+  margin: 2rem auto;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  color: hsl(200, 0%, 20%);
+}

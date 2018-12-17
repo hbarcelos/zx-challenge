@@ -11,9 +11,8 @@ function PocSearchContainer({ render, data }) {
   return id ? (
     render({ id })
   ) : (
-    <Message content="Nenhum ponto de venda encontrado para este endereço..." />
+    <Message content="Nenhum ponto de venda encontrado próximo a esse endereço!" />
   );
-  // return this.props.render({});
 }
 
 PocSearchContainer.propTypes = {

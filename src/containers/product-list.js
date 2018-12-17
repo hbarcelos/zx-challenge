@@ -4,11 +4,7 @@ import { compose } from 'ramda';
 import { getProductList } from '../services/poc';
 import withDataProvider from '../hocs/with-data-provider';
 import withLoading from '../hocs/with-loading';
-import {
-  EmptyProductList,
-  ProductList,
-  ProductCard,
-} from '../components/product';
+import { ProductList, ProductCard } from '../components/product';
 import { Message } from '../components/message';
 
 const renderProduct = product => (
@@ -19,7 +15,7 @@ function ProductListContainer({ data }) {
   return data && data.length > 0 ? (
     <ProductList data={data} render={renderProduct} />
   ) : (
-    <EmptyProductList />
+    <Message content="Nenhum produto encontrado!" />
   );
 }
 

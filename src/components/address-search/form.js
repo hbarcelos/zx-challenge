@@ -3,8 +3,17 @@ import PropTypes from 'prop-types';
 import './form.css';
 
 export default class AddressSearchForm extends React.Component {
-  state = {
+  static propTypes = {
+    handleSubmit: PropTypes.func.isRequired,
+    address: PropTypes.string,
+  };
+
+  static defaultProps = {
     address: '',
+  };
+
+  state = {
+    address: this.props.address,
   };
 
   handleChange = event => {
@@ -53,7 +62,3 @@ export default class AddressSearchForm extends React.Component {
     );
   }
 }
-
-AddressSearchForm.propTypes = {
-  handleSubmit: PropTypes.func.isRequired,
-};

@@ -1,0 +1,25 @@
+.nav {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0 2rem;
+}
+
+.nav__item {
+  padding: 0.5rem;
+  border-radius: 0.275rem;
+  text-decoration: none;
+  background: hsl(148, 49%, 35%);
+  border: 1px solid hsl(148, 82%, 22%);
+  color: hsl(200, 43%, 96%);
+  min-width: 10rem;
+  text-align: center;
+}
+
+.nav__item:hover,
+.nav__item:focus {
+  background: hsl(148, 36%, 42%);
+  border: 1px solid hsl(148, 74%, 27%);
+  color: hsl(200, 43%, 98%);
+}

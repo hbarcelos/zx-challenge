@@ -6,9 +6,12 @@ import { AddressSearchForm } from '../components/address-search';
 export default class AddressSearchContainer extends React.Component {
   static propTypes = {
     handleAddressChange: PropTypes.func.isRequired,
+    address: PropTypes.string,
   };
 
-  static defaultProps = {};
+  static defaultProps = {
+    address: '',
+  };
 
   handleSubmit = async ({ address }) => {
     const addressInfo = await find({ address });
@@ -16,6 +19,11 @@ export default class AddressSearchContainer extends React.Component {
   };
 
   render() {
-    return <AddressSearchForm handleSubmit={this.handleSubmit} />;
+    return (
+      <AddressSearchForm
+        address={this.props.address}
+        handleSubmit={this.handleSubmit}
+      />
+    );
   }
 }

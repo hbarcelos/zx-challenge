@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import App from './containers/app';
+import App from './app';
 import 'normalize.css';
 import 'minireset.css';
 import './index.css';

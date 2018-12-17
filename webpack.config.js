@@ -41,7 +41,7 @@ module.exports = {
     filename: 'bundle.js',
   },
   plugins: [
-    new DotenvPlugin({ path: './.env' }),
+    new DotenvPlugin({ path: './.env', safe: true }),
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebPackPlugin({
       template: 'src/static/index.html',

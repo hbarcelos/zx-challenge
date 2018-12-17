@@ -1,6 +1,7 @@
 .product__card {
-  padding: 2%;
-  flex: 1 16%;
+  padding: 2rem;
+  flex: 1 16.66%;
+  max-width: 100%;
   display: flex;
   flex-flow: column nowrap;
   background-color: hsl(200, 43%, 99%);
@@ -8,20 +9,27 @@
   box-shadow: 0 0 2px -1px hsla(200, 0%, 20%, 0.8);
 }
 
-@media (max-width: 920px) {
+@media (max-width: 1024px) {
   .product__card {
-    flex: 1 21%;
+    flex: 1 20%;
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .product__card {
-    flex: 1 46%;
+    flex: 1 25%;
+  }
+}
+
+@media (max-width: 480px) {
+  .product__card {
+    flex: 1 50%;
   }
 }
 
 .product__img {
-  width: 100%;
+  max-width: 100%;
+  height: auto;
   margin-bottom: 1rem;
 }
 
